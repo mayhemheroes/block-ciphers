@@ -25,3 +25,16 @@ name = "aes_encrypt"
 path = "fuzz_targets/aes_encrypt.rs"
 test = false
 doc = false
+
+
+[[bin]]
+name = "aes192_encrypt"
+path = "fuzz_targets/aes192_encrypt.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "aes256_encrypt"
+path = "fuzz_targets/aes256_encrypt.rs"
+test = false
+doc = false

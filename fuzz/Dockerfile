@@ -19,3 +19,8 @@ FROM --platform=linux/amd64 rustlang/rust:nightly
 ## TODO: Change <Path in Builder Stage>
 
 COPY --from=builder /block-ciphers/fuzz/target/x86_64-unknown-linux-gnu/release/aes_encrypt /
+
+
+COPY --from=builder /block-ciphers/fuzz/target/x86_64-unknown-linux-gnu/release/aes192_encrypt /
+
+COPY --from=builder /block-ciphers/fuzz/target/x86_64-unknown-linux-gnu/release/aes256_encrypt /

@@ -1,0 +1,7 @@
+project: block-ciphers
+target: aes192_encrypt
+duration: 90
+
+cmds:
+    - cmd: /aes192_encrypt
+

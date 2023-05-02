@@ -1,7 +1,7 @@
 #![no_main]
 use libfuzzer_sys::fuzz_target;
 
-use aes::Aes128;
+use aes::Aes256;
 use aes::cipher::{
     BlockEncrypt, BlockDecrypt, KeyInit,
     generic_array::GenericArray,
@@ -22,7 +22,7 @@ fuzz_target!(|value: (&[u8], &[u8])| {
 
     let mut temp_block = GenericArray::from([0u8; 16]);
 
-    let cipher = Aes128::new(&key);
+    let cipher = Aes256::new(&key);
     let to_encrypt_copy = to_encrypt.clone();
     cipher.encrypt_block(&mut to_encrypt);
 
