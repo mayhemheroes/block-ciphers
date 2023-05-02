@@ -55,8 +55,8 @@ jobs:
       matrix:
         mayhemfile:
         - fuzz/mayhemfiles/Mayhemfile_aes_encrypt
-        - fuzz/Mayhemfile_aes192_encrypt
-        - fuzz/Mayhemfile_aes256_encrypt
+        - fuzz/mayhemfiles/Mayhemfile_aes192_encrypt
+        - fuzz/mayhemfiles/Mayhemfile_aes256_encrypt
     steps:
     - uses: actions/checkout@v3
     - name: Start analysis for ${{ matrix.mayhemfile }}
