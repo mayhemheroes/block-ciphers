@@ -1,0 +1,7 @@
+project: block-ciphers
+target: aes_encrypto
+duration: 90
+
+cmds:
+    - cmd: /aes_encrypt
+
