@@ -10,14 +10,14 @@ use aes::cipher::{
 
 fuzz_target!(|value: (&[u8], &[u8])| {
     let (encrypt_bytes, key_bytes) = value;
-    if encrypt_bytes.len() < 16 {
+    if encrypt_bytes.len() < 32 {
         return
     }
-    if key_bytes.len() < 16 {
+    if key_bytes.len() < 32 {
         return
     }
     
-    let key = GenericArray::clone_from_slice(&key_bytes[0..16]);
+    let key = GenericArray::clone_from_slice(&key_bytes[0..32]);
     let mut to_encrypt: GenericArray<u8, U16> = GenericArray::clone_from_slice(&encrypt_bytes[0..16]);
 
     let mut temp_block = GenericArray::from([0u8; 16]);
