@@ -57,14 +57,16 @@ jobs:
         - fuzz/mayhemfiles/Mayhemfile_aes_encrypt
         - fuzz/mayhemfiles/Mayhemfile_aes192_encrypt
         - fuzz/mayhemfiles/Mayhemfile_aes256_encrypt
+        - fuzz/mayhemfiles/Mayhemfile_threefish_256
+        - fuzz/mayhemfiles/Mayhemfile_threefish_512
+        - fuzz/mayhemfiles/Mayhemfile_threefish_1024
     steps:
     - uses: actions/checkout@v3
     - name: Start analysis for ${{ matrix.mayhemfile }}
       uses: ForAllSecure/mcode-action@v1
       with:
         mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-        args: --image ${{ needs.build.outputs.image }} --file ${{ matrix.mayhemfile
-          }} --duration 300
+        args: --image ${{ needs.build.outputs.image }} --file ${{ matrix.mayhemfile }} --duration 300
         sarif-output: sarif
     - name: Upload SARIF file(s)
       uses: github/codeql-action/upload-sarif@v2

@@ -12,9 +12,10 @@ cargo-fuzz = true
 libfuzzer-sys = "0.4"
 
 [dependencies.aes]
-# DELETE ME: Ensure path is a path relative to this Cargo.toml pointing to
-# DELETE ME: the pacakge you want to import from the repo.
 path = "../aes"
+
+[dependencies.threefish]
+path = "../threefish"
 
 # Prevent this from interfering with workspaces
 [workspace]
@@ -36,5 +37,23 @@ doc = false
 [[bin]]
 name = "aes256_encrypt"
 path = "fuzz_targets/aes256_encrypt.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "threefish_256"
+path = "fuzz_targets/threefish_256.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "threefish_512"
+path = "fuzz_targets/threefish_512.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "threefish_1024"
+path = "fuzz_targets/threefish_1024.rs"
 test = false
 doc = false

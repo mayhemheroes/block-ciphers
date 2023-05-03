@@ -29,7 +29,6 @@ fuzz_target!(|value: (&[u8], &[u8])| {
     cipher.decrypt_block_b2b(&to_encrypt, &mut temp_block);
     cipher.decrypt_block(&mut to_encrypt);
 
-
     assert_eq!(to_encrypt, to_encrypt_copy);
     assert_eq!(temp_block, to_encrypt_copy);
 });

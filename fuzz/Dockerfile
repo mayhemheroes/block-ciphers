@@ -24,3 +24,9 @@ COPY --from=builder /block-ciphers/fuzz/target/x86_64-unknown-linux-gnu/release/
 COPY --from=builder /block-ciphers/fuzz/target/x86_64-unknown-linux-gnu/release/aes192_encrypt /
 
 COPY --from=builder /block-ciphers/fuzz/target/x86_64-unknown-linux-gnu/release/aes256_encrypt /
+
+COPY --from=builder /block-ciphers/fuzz/target/x86_64-unknown-linux-gnu/release/threefish_256 /
+
+COPY --from=builder /block-ciphers/fuzz/target/x86_64-unknown-linux-gnu/release/threefish_512 /
+
+COPY --from=builder /block-ciphers/fuzz/target/x86_64-unknown-linux-gnu/release/threefish_1024 /
