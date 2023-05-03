@@ -30,3 +30,5 @@ COPY --from=builder /block-ciphers/fuzz/target/x86_64-unknown-linux-gnu/release/
 COPY --from=builder /block-ciphers/fuzz/target/x86_64-unknown-linux-gnu/release/threefish_512 /
 
 COPY --from=builder /block-ciphers/fuzz/target/x86_64-unknown-linux-gnu/release/threefish_1024 /
+
+COPY --from=builder /block-ciphers/fuzz/target/x86_64-unknown-linux-gnu/release/twofish /

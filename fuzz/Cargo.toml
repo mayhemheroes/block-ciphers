@@ -17,6 +17,9 @@ path = "../aes"
 [dependencies.threefish]
 path = "../threefish"
 
+[dependencies.twofish]
+path = "../twofish"
+
 # Prevent this from interfering with workspaces
 [workspace]
 members = ["."]
@@ -55,5 +58,11 @@ doc = false
 [[bin]]
 name = "threefish_1024"
 path = "fuzz_targets/threefish_1024.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "twofish"
+path = "fuzz_targets/twofish.rs"
 test = false
 doc = false

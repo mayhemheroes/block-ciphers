@@ -60,6 +60,7 @@ jobs:
         - fuzz/mayhemfiles/Mayhemfile_threefish_256
         - fuzz/mayhemfiles/Mayhemfile_threefish_512
         - fuzz/mayhemfiles/Mayhemfile_threefish_1024
+        - fuzz/mayhemfiles/Mayhemfile_twofish
     steps:
     - uses: actions/checkout@v3
     - name: Start analysis for ${{ matrix.mayhemfile }}
