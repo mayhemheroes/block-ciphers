@@ -1,0 +1,7 @@
+project: block-ciphers
+target: threefish_256
+duration: 90
+
+cmds:
+    - cmd: /threefish_256
+

@@ -1,0 +1,68 @@
+[package]
+name = "block-ciphers-fuzz"
+version = "0.1.0"
+authors = ["Automatically generated"]
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+
+[dependencies.aes]
+path = "../aes"
+
+[dependencies.threefish]
+path = "../threefish"
+
+[dependencies.twofish]
+path = "../twofish"
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "aes_encrypt"
+path = "fuzz_targets/aes_encrypt.rs"
+test = false
+doc = false
+
+
+[[bin]]
+name = "aes192_encrypt"
+path = "fuzz_targets/aes192_encrypt.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "aes256_encrypt"
+path = "fuzz_targets/aes256_encrypt.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "threefish_256"
+path = "fuzz_targets/threefish_256.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "threefish_512"
+path = "fuzz_targets/threefish_512.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "threefish_1024"
+path = "fuzz_targets/threefish_1024.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "twofish"
+path = "fuzz_targets/twofish.rs"
+test = false
+doc = false

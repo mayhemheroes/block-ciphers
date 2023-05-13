@@ -1,0 +1,7 @@
+project: block-ciphers
+target: twofish
+duration: 90
+
+cmds:
+    - cmd: /twofish
+
