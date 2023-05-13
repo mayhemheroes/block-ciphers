@@ -41,7 +41,7 @@ jobs:
       with:
         context: .
         push: true
-        file: fuzz/Dockerfile
+        file: mayhem/Dockerfile
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
     outputs:
@@ -54,13 +54,13 @@ jobs:
       fail-fast: false
       matrix:
         mayhemfile:
-        - fuzz/mayhemfiles/Mayhemfile_aes_encrypt
-        - fuzz/mayhemfiles/Mayhemfile_aes192_encrypt
-        - fuzz/mayhemfiles/Mayhemfile_aes256_encrypt
-        - fuzz/mayhemfiles/Mayhemfile_threefish_256
-        - fuzz/mayhemfiles/Mayhemfile_threefish_512
-        - fuzz/mayhemfiles/Mayhemfile_threefish_1024
-        - fuzz/mayhemfiles/Mayhemfile_twofish
+        - mayhem/mayhemfiles/aes_encrypt.mayhemfile
+        - mayhem/mayhemfiles/aes192_encrypt.mayhemfile
+        - mayhem/mayhemfiles/aes256_encrypt.mayhemfile
+        - mayhem/mayhemfiles/threefish_256.mayhemfile
+        - mayhem/mayhemfiles/threefish_512.mayhemfile
+        - mayhem/mayhemfiles/threefish_1024.mayhemfile
+        - mayhem/mayhemfiles/twofish.mayhemfile
     steps:
     - uses: actions/checkout@v3
     - name: Start analysis for ${{ matrix.mayhemfile }}
